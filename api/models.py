@@ -8,3 +8,15 @@ class Student(models.Model):
 
 	def __str__(self):
 		return '{} {} {}'.format(self.name, self.sex, self.sid)
+
+class User(models.Model):
+	username = models.CharField('用户名', max_length=225, default="", unique=True)
+	password = models.CharField('密码', max_length=225, default="")
+	nickname = models.CharField('用户昵称', max_length=255, default="--")
+	avatar   = models.CharField('头像', max_length=255, default="")
+	created_date = models.DateTimeField(auto_now_add=True)
+	updated_date = models.DateTimeField(auto_now=True)
+
+	def __str__(self):
+		return self.username
+
