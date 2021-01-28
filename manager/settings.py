@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'polls.apps.PollsConfig',
     'rest_framework',
     'api',
-    'jwtauth'
+    'jwtauth',
+    'drf_yasg'
 ]
 
 MIDDLEWARE = [
