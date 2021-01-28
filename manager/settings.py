@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'polls.apps.PollsConfig',
     'rest_framework',
     'api',
+    'jwtauth'
 ]
 
 MIDDLEWARE = [
@@ -80,9 +81,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'manager',
-        'USER': 'root',
-        'PASSWORD': '951229_z',
-        'HOST': '127.0.0.1',
+        'USER': 'manager',
+        'PASSWORD': '123456',
+        'HOST': '192.168.100.141',
         'PORT': '3306'
     }
 }
@@ -105,6 +106,21 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    "DEFAULT_PARSER_CLASSES": [
+        "rest_framework.parsers.JSONParser",
+    ],
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.BasicAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework_simplejwt.authentication.JWTAuthentication"
+    ],
+    'PAGE_SIZE': 10
+}
 
 
 # Internationalization
