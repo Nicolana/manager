@@ -119,7 +119,7 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.SessionAuthentication",
         "rest_framework_simplejwt.authentication.JWTAuthentication"
     ],
-    'PAGE_SIZE': 10
+    # 'PAGE_SIZE': 10
 }
 
 
